@@ -8,6 +8,15 @@ export default defineConfig(() => {
     plugins: [
       react(),
       tailwindcss(),
+      {
+        name: 'html-env-transform',
+        transformIndexHtml(html) {
+          return html.replace(
+            '%VITE_ANALYTICS_WEBSITE_ID%',
+            process.env.VITE_ANALYTICS_WEBSITE_ID || ''
+          );
+        }
+      },
     ],
     resolve: {
       alias: {
