@@ -1,11 +1,9 @@
-import { defineConfig, loadEnv } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from "path";
 
-export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), '');
-
+export default defineConfig(() => {
   return {
     plugins: [
       react(),
@@ -13,10 +11,11 @@ export default defineConfig(({ mode }) => {
       {
         name: 'html-env-transform',
         transformIndexHtml(html) {
-          return html.replace(/%(.*?)%/g, function (match, p1) {
-            return env[p1] || match;
-          });
-        },
+          return html.replace(
+            '%VITE_ANALYTICS_WEBSITE_ID%',
+            process.env.VITE_ANALYTICS_WEBSITE_ID || ''
+          );
+        }
       },
     ],
     resolve: {
