@@ -19,7 +19,7 @@ Allow: /fonts/
 Allow: /public/
 
 # Sitemap
-Sitemap: https://seu-dominio.com/sitemap.xml
+Sitemap: https://portfolio-gabriel-xavier-dev.vercel.app/sitemap.xml
 
 # Regras específicas para Google
 User-agent: Googlebot
