@@ -1,0 +1,49 @@
+# Robots.txt - Portfólio Desenvolvedor Front-end
+# Última atualização: 2025-12-03
+
+# Permitir todos os bots
+User-agent: *
+Allow: /
+
+# Desabilitar indexação de arquivos específicos
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.css$
+Disallow: /*.js$
+
+# Permitir acesso a assets públicos
+Allow: /images/
+Allow: /fonts/
+Allow: /public/
+
+# Sitemap
+Sitemap: https://seu-dominio.com/sitemap.xml
+
+# Regras específicas para Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Regras específicas para Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Bloquear bots maliciosos conhecidos
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Permitir acesso a ferramentas de análise
+User-agent: *
+Allow: /
